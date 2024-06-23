@@ -1,0 +1,45 @@
+
+GUIA DE INSTALAÇÃO, COMPILAÇÃO E EXECUÇÃO (Apache Thrift) - para Debian/Ubuntu
+
+1. Instalação de Dependências:
+	Debian/Ubuntu:
+	No terminal, execute:
+
+		$ sudo apt-get install automake bison flex g++ git libboost-all-dev libevent-dev libssl-dev libtool make pkg-config
+		
+2. Compilação e Execução:
+	Após baixar a pasta ApacheThrift.zip, navegue até o diretório <seu caminho>/ApacheThrift/apache. Abra um terminal e execute os seguintes comandos:
+
+	Geração de código em C++ pelo Thrift:
+
+
+		thrift --gen cpp functions.thrift
+		Uma pasta gen-cpp será gerada contendo arquivos .cpp e .h.
+
+	Compilação do Cliente e Servidor:
+
+	Cliente:
+
+		g++ gen-cpp/functions_types.cpp gen-cpp/ApacheService.cpp functions_client.cpp -o functions_client -lthrift
+	Servidor:
+
+
+		g++ gen-cpp/functions_types.cpp gen-cpp/ApacheService.cpp functions_server.cpp -o functions_server -lthrift
+		
+	Isso gerará os executáveis functions_server e functions_client.
+
+	Abra um terminal adicional no mesmo diretório e execute:
+
+	Terminal 1 (servidor): ./functions_server
+	Terminal 2 (cliente): ./functions_client <número do método escolhido> <parâmetros>
+	
+Dessa forma, a execução do Apache Thrift deve ser bem-sucedida.
+
+Observações:
+
+Para configurar o IP e porta, é necessário modificar os arquivos functions_client.cpp e functions_server.cpp. Por padrão, o servidor está configurado para rodar em localhost:9090.
+
+Para mais informações, consulte:
+
+Documentação oficial do Apache Thrift para Debian: https://thrift.apache.org/docs/install/debian.html
+	
