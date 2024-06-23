@@ -120,7 +120,7 @@ public:
 
 int main()
 {
-    const int port = 9090;
+    const int port = 80;
 
     std::shared_ptr<TServerTransport> serverTransport(new TServerSocket(port));
     std::shared_ptr<TTransportFactory> transportFactory(new TBufferedTransportFactory());
