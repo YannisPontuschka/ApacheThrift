@@ -1,4 +1,4 @@
-Implementação de um RPC (Remote Call Procedure) utilizando Apache Thrift.
+Implementação de um RPC (Remote Call Procedure) utilizando Apache Thrift, para a matéria de Desenvolvimento Distribuídos.
 
 
 GUIA DE INSTALAÇÃO, COMPILAÇÃO E EXECUÇÃO (Apache Thrift) - para Debian/Ubuntu
